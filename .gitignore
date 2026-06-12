@@ -3,3 +3,4 @@ mlruns/
 MLProject/model_dir/
 *.pkl
 data/lock
+data/
