@@ -48,4 +48,4 @@ jobs:
       - name: Run mlflow project
         working-directory: ./modelling
         run: |
-          mlflow run . --env-manager=local
+          python train.py
