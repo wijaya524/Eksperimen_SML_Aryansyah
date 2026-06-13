@@ -1,3 +1,5 @@
+import sys
+sys.modules['torch'] = None
 import mlflow
 import pandas as pd
 # 1. PERBAIKAN: Ganti Classifier menjadi Regressor
