@@ -11,7 +11,7 @@ on:
 env:
   # Diubah menjadi data_train.csv karena kita akan mengeksekusi langsung dari dalam folder modelling
   CSV_URL: "data_train.csv"
-  TARGET_VAR: "quality"
+  TARGET_VAR: "average_rating"
   ALPHA: 0.5
   L1_RATIO: 0.5
   RANDOM_STATE: 42
