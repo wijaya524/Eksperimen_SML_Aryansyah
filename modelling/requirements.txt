@@ -147,7 +147,7 @@ protobuf==4.25.9
 psutil==7.0.0
 pure_eval==0.2.3
 pyaml==25.7.0
-pyarrow
+pyarrow>=21.0.0
 pyasn1==0.6.3
 pyasn1_modules==0.4.2
 pycparser==2.22
