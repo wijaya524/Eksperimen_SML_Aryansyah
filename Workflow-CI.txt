@@ -1,1 +1,1 @@
-https://github.com/wijaya524/Eksperimen_SML_Aryansyah/tree/ac8c7856b368b5396ac4ad36f71ba5ae8cead44d/.github/workflows
+https://github.com/wijaya524/Workflow-CI.git
