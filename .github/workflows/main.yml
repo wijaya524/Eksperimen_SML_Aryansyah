@@ -9,7 +9,8 @@ on:
       - main
 
 env:
-  CSV_URL: "modelling/data_train.csv"
+  # Diubah menjadi data_train.csv karena kita akan mengeksekusi langsung dari dalam folder modelling
+  CSV_URL: "data_train.csv"
   TARGET_VAR: "quality"
   ALPHA: 0.5
   L1_RATIO: 0.5
@@ -35,13 +36,16 @@ jobs:
           echo "CSV URL: $CSV_URL"
           echo "Target Variable: $TARGET_VAR"
 
-      # 4. Menginstal MLflow beserta library machine learning yang dibutuhkan train.py
+      # 4. Menginstal MLflow beserta library machine learning yang dibutuhkan
+      # Catatan: Lebih disarankan install menggunakan requirements.txt yang sudah ada di folder modelling
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mlflow pandas scikit-learn openpyxl
-      
-      # 5. Mengeksekusi project MLflow langsung dari dalam folder modelling
+          if [ -f modelling/requirements.txt ]; then pip install -r modelling/requirements.txt; fi
+          pip install mlflow pandas scikit-learn openpyxl  # fallback / library tambahan jika belum ada di requirements
+
+      # 5. Mengeksekusi project MLflow dengan working-directory di dalam folder modelling
       - name: Run mlflow project
+        working-directory: ./modelling
         run: |
-          mlflow run ./modelling --env-manager=local
+          mlflow run . --env-manager=local
