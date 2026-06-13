@@ -46,6 +46,6 @@ jobs:
 
       # 5. Mengeksekusi project MLflow dengan working-directory di dalam folder modelling
       - name: Run mlflow project
-        working-directory: ./modelling
+        working-directory: ./Membangun_model
         run: |
           python train.py
